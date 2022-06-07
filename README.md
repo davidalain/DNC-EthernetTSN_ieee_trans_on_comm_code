@@ -1,1 +1,1 @@
-# DNC-EthernetTSN-access
+DNC-EthernetTSN-ieee_tnsm_code
