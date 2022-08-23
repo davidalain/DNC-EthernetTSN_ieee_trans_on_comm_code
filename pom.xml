@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>DNC-EthernetTSN</groupId>
+	<artifactId>DNC-EthernetTSN</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+		<maven.compiler.source>12</maven.compiler.source>
+		<maven.compiler.target>12</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<junit.platform.version>1.4.1</junit.platform.version>
+		<junit.jupiter.version>5.4.1</junit.jupiter.version>
+		<apache.commons.version.from>3.0</apache.commons.version.from>
+		<apache.commons.version.to>3.6.1</apache.commons.version.to>
+		<numbackend.version>1.1.1</numbackend.version>
+		<!-- <networkmodel.version>0.0.1-SNAPSHOT</networkmodel.version> -->
+		<maven.plugin.surefire.version>2.22.1</maven.plugin.surefire.version>
+		<maven.plugin.versions.version>2.5</maven.plugin.versions.version>
+		<maven.build-helper.plugin.version>3.0.0</maven.build-helper.plugin.version>
+		<maven.download.plugin.version>1.4.1</maven.download.plugin.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>[${apache.commons.version.from},${apache.commons.version.to}]</version>
+		</dependency>
+		<dependency>
+			<groupId>org.networkcalculus.num</groupId>
+			<artifactId>NetCal-NumBackend</artifactId>
+			<version>${numbackend.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.knowm.xchart</groupId>
+			<artifactId>xchart</artifactId>
+			<version>3.6.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>openxml4j</artifactId>
+			<version>1.0-beta</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>13</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

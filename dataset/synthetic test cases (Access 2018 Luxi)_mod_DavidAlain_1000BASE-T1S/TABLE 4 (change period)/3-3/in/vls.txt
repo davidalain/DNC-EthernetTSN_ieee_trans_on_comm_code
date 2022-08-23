@@ -1,0 +1,10 @@
+#generated
+vl1 : ES1.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES4.0 ; 
+vl2 : ES2.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES5.0 ; 
+vl3 : ES3.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES6.0 ; 
+vl4 : ES1.0,ES2.0 ; 
+vl5 : ES2.0,ES3.0 ; 
+vl6 : ES3.0,ES1.0 ; 
+vl8 : ES3.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES5.0 ; 
+vl9 : ES2.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES6.0 ; 
+vl10 : ES1.0,SW1.0 ; SW1.1,SW2.0 ; SW2.1,ES5.0 ; 
