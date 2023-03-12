@@ -1,6 +1,10 @@
-## Academic Attribution:
+# DNC-EthernetTSN
 
-This tool is part of achieved results in the PhD of **David A. Nascimento**.
+This code provides a Network Calculus-based tool (as an extension of the [DNC tool](https://github.com/NetCal/DNC)) for calculating worst-case bounds on Time-Sensitive Networking (TSN)-based Time-Aware Shaper (TAS) networks and its integration with Physical Layer Collision Avoidance (PLCA) multidrop networks. 
+
+This tool is part of achieved results in the PhD of **David A. Nascimento** at CIn / UFPE - Brazil.
+
+## Academic Attribution:
 
 If you use it for research, please include the following reference in any resulting publication.
 
