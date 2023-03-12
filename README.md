@@ -1,15 +1,19 @@
 # DNC-EthernetTSN
 
-This code provides a Network Calculus-based tool (as an extension of the [DNC tool](https://github.com/NetCal/DNC)) for calculating worst-case bounds on Time-Sensitive Networking (TSN)-based Time-Aware Shaper (TAS) networks and its integration with Physical Layer Collision Avoidance (PLCA) multidrop networks. 
+This code implements Network Calculus modeling and analysis solutions used to provide results for the paper **Modeling and Analysis of Time-Aware Shaper on Half-Duplex Ethernet PLCA Multidrop** published in the **IEEE Transactions on Communications**.
 
-This tool is part of achieved results in the PhD of **David A. Nascimento** at CIn / UFPE - Brazil.
+[Lastest draft of paper can be downloaded here.](https://doi.org/10.1109/TCOMM.2023.3246080)
+
+**DNC-EthernetTSN** is a Network Calculus-based tool (used as an extension of the [DNC tool](https://github.com/NetCal/DNC)) for calculating worst-case bounds on Time-Sensitive Networking (TSN)-based Time-Aware Shaper (TAS) networks and its integration with Physical Layer Collision Avoidance (PLCA) multidrop networks. 
+
+**DNC-EthernetTSN** tool is part of achieved results in the PhD of **David A. Nascimento** at CIn / UFPE - Brazil.
 
 ## Academic Attribution:
 
 If you use it for research, please include the following reference in any resulting publication.
 
 ```
-@ARTICLE{PLCA_TAS:2023,
+@ARTICLE{TAS_PLCA:2023,
   author={Nascimento, David A. and Bondorf, Steffen and Campelo, Divanilson R.},
   journal={IEEE Transactions on Communications}, 
   title={Modeling and Analysis of Time-Aware Shaper on Half-Duplex Ethernet PLCA Multidrop}, 
