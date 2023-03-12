@@ -4,7 +4,7 @@ This code implements Network Calculus modeling and analysis solutions used to pr
 
 [Lastest draft of the paper can be downloaded here.](./Paper_TAS_PLCA.pdf)
 
-**DNC-EthernetTSN** is a Network Calculus-based tool (used as an extension of the [DNC tool](https://github.com/NetCal/DNC)) for calculating worst-case bounds on Time-Sensitive Networking (TSN)-based Time-Aware Shaper (TAS) networks and its integration with Physical Layer Collision Avoidance (PLCA) multidrop networks. 
+**DNC-EthernetTSN** is a Network Calculus-based tool (used as an extension of the [DNC tool](https://github.com/NetCal/DNC)) for calculating worst-case bounds on Time-Aware Shaper (TAS)-based Time-Sensitive Networking (TSN) networks and its integration with Physical Layer Collision Avoidance (PLCA) multidrop networks. 
 
 **DNC-EthernetTSN** tool is part of achieved results in the PhD of **David A. Nascimento** at CIn / UFPE - Brazil.
 
