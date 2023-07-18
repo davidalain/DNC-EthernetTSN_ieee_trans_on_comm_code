@@ -13,14 +13,14 @@ This code implements Network Calculus modeling and analysis solutions used to pr
 If you use it for research, please include the following reference in any resulting publication.
 
 ```
-@ARTICLE{TAS_PLCA:2023,
+@ARTICLE{Nascimento_TAS_PLCA:2023,
   author={Nascimento, David A. and Bondorf, Steffen and Campelo, Divanilson R.},
   journal={IEEE Transactions on Communications}, 
   title={Modeling and Analysis of Time-Aware Shaper on Half-Duplex Ethernet PLCA Multidrop}, 
   year={2023},
-  volume={},
-  number={},
-  pages={1-1},
+  volume={71},
+  number={4},
+  pages={2216-2229},
   doi={10.1109/TCOMM.2023.3246080}
 }
 ```
