@@ -33,7 +33,7 @@ If you use it for research, please include the following reference in any result
 
 # How to run this code?
 
-Run main file **Ethernet_IEEE_TransOnComm_2022_paper.java** of package **org.networkcalculus.dnc.ethernet.demos**.
+Run main file **Ethernet_IEEE_TCOM_2023_paper.java** of package **org.networkcalculus.dnc.ethernet.demos**.
 
 The results will be stored in the **results** directory. 
 They include:
