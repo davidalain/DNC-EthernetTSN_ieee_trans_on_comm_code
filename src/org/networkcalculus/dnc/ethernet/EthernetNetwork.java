@@ -146,7 +146,7 @@ public class EthernetNetwork {
 			final EthernetDevice destination = entry.getValue().getSecond();
 
 			switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-			case NO_PLCA_SERVER_MODELING:
+			case SEPARATED_PLCA_SERVER_MODELING:
 				addEthernetFlow_NoPlcaServer(ethernetFlow, source, destination);
 				break;
 			case SINGLE_PLCA_SERVER_MODELING:
@@ -154,7 +154,7 @@ public class EthernetNetwork {
 				break;
 			}
 
-			//			if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+			//			if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 			//				addEthernetFlow_PlcaServer(ethernetFlow, source, destination);
 			//			else
 			//				addEthernetFlow_NoPlcaServer(ethernetFlow, source, destination);
@@ -420,13 +420,13 @@ public class EthernetNetwork {
 
 		final EthernetFlow ethernetFlow = new EthernetFlow(null, null, arrivalCurve);
 
-		//		if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+		//		if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 		//			addEthernetFlow_NoPlcaServer(ethernetFlow, sourceDevice, sinkDevice);
 		//		else
 		//			addEthernetFlow_PlcaServer(ethernetFlow, sourceDevice, sinkDevice);
 
 		switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-		case NO_PLCA_SERVER_MODELING:
+		case SEPARATED_PLCA_SERVER_MODELING:
 			addEthernetFlow_NoPlcaServer(ethernetFlow, sourceDevice, sinkDevice);
 			break;
 		case SINGLE_PLCA_SERVER_MODELING:
@@ -444,7 +444,7 @@ public class EthernetNetwork {
 		final EthernetFlow ethernetFlow = new EthernetFlow(null, null, arrivalCurve);
 
 		switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-		case NO_PLCA_SERVER_MODELING:
+		case SEPARATED_PLCA_SERVER_MODELING:
 			addEthernetFlow_NoPlcaServer(ethernetFlow, sourceDevice, sinkDevice);
 			break;
 		case SINGLE_PLCA_SERVER_MODELING:
@@ -452,7 +452,7 @@ public class EthernetNetwork {
 			break;
 		}
 
-		//		if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+		//		if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 		//			addEthernetFlow_NoPlcaServer(ethernetFlow, sourceDevice, sinkDevice);
 		//		else
 		//			addEthernetFlow_PlcaServer(ethernetFlow, sourceDevice, sinkDevice);
@@ -506,7 +506,7 @@ public class EthernetNetwork {
 						//.replaceAll("\\[", "_")
 						//.replaceAll("\\]", "_")
 						.replaceAll("\\>", "");
-				curvePlotUtil.saveCurve(ethernetFlow.getArrivalCurve(), ethernetFlow.getAlias(), "Arrival Curve", dir.getPath() + "/AC_" + nameDescription);
+				curvePlotUtil.saveCurveChart(ethernetFlow.getArrivalCurve(), ethernetFlow.getAlias(), "Arrival Curve", dir.getPath() + "/AC_" + nameDescription);
 			}
 
 		}
@@ -537,7 +537,7 @@ public class EthernetNetwork {
 									//.replaceAll("\\[", "_")
 									//.replaceAll("\\]", "_")
 									.replaceAll("\\>", "");
-							curvePlotUtil.saveCurve(stServerData.getServiceCurve(), stServerData.getSTServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
+							curvePlotUtil.saveCurveChart(stServerData.getServiceCurve(), stServerData.getSTServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
 
 						}
 						
@@ -550,7 +550,7 @@ public class EthernetNetwork {
 									//.replaceAll("\\[", "_")
 									//.replaceAll("\\]", "_")
 									.replaceAll("\\>", "");
-							curvePlotUtil.saveCurve(plcaServerData.getServiceCurve(), plcaServerData.getPlcaServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
+							curvePlotUtil.saveCurveChart(plcaServerData.getServiceCurve(), plcaServerData.getPlcaServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
 
 						}
 						
@@ -564,7 +564,7 @@ public class EthernetNetwork {
 								//.replaceAll("\\[", "_")
 								//.replaceAll("\\]", "_")
 								.replaceAll("\\>", "");
-						curvePlotUtil.saveCurve(singlePlcaServerData.getServiceCurve(), singlePlcaServerData.getPlcaServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
+						curvePlotUtil.saveCurveChart(singlePlcaServerData.getServiceCurve(), singlePlcaServerData.getPlcaServer().getAlias(), "Service Curve", dir.getPath() + "/SC_" + nameDescription);
 
 					}
 					
@@ -920,7 +920,7 @@ public class EthernetNetwork {
 			for(EthernetInterface ethernetInterface : device.getInterfaces()) {
 
 				switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-				case NO_PLCA_SERVER_MODELING:
+				case SEPARATED_PLCA_SERVER_MODELING:
 					ethernetInterface.buildOutputServersAndInternalTurns_NoPlcaServer(networkConfigBuilder);
 					break;
 				case SINGLE_PLCA_SERVER_MODELING:
@@ -928,7 +928,7 @@ public class EthernetNetwork {
 					break;
 				}
 
-				//				if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+				//				if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 				//					ethernetInterface.buildOutputServersAndInternalTurns_NoPlcaServer(networkConfigBuilder);
 				//				else
 				//					ethernetInterface.buildOutputServersAndInternalTurns_PlcaServer(networkConfigBuilder);
@@ -996,7 +996,7 @@ public class EthernetNetwork {
 			//				validateScheduling(entry);
 
 			switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-			case NO_PLCA_SERVER_MODELING:
+			case SEPARATED_PLCA_SERVER_MODELING:
 				addEthernetFlow_NoPlcaServer(ethernetFlow, source, destination);
 				break;
 			case SINGLE_PLCA_SERVER_MODELING:
@@ -1004,7 +1004,7 @@ public class EthernetNetwork {
 				break;
 			}
 
-			//			if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+			//			if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 			//				addEthernetFlow_NoPlcaServer(ethernetFlow, source, destination);
 			//			else
 			//				addEthernetFlow_PlcaServer(ethernetFlow, source, destination);
@@ -1095,13 +1095,13 @@ public class EthernetNetwork {
 
 				final double guaranteedLengthForTransmission;
 				switch(this.tasWindowsBuilder.getExecutionConfig().plcaModeling) {
-				case NO_PLCA_SERVER_MODELING:		guaranteedLengthForTransmission = (window.L_bar_i_Pm + window.d_gb_Pm - window.d_i_PLCA);	break;
+				case SEPARATED_PLCA_SERVER_MODELING:		guaranteedLengthForTransmission = (window.L_bar_i_Pm + window.d_gb_Pm - window.d_i_PLCA);	break;
 				case SINGLE_PLCA_SERVER_MODELING:	guaranteedLengthForTransmission = (window.L_bar_i_Pm + window.d_gb_Pm);						break;
 				default:							
 					throw new IllegalArgumentException("Unexpected value: " + this.tasWindowsBuilder.getExecutionConfig().plcaModeling);
 				}
 
-				//				if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+				//				if(Objects.equals(this.networkConfigBuilder.getExecutionConfig().plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 				//					guaranteedTimeWindow = (window.L_bar_i_Pm - window.d_i_PLCA);
 				//				else
 				//					guaranteedTimeWindow = (window.L_bar_i_Pm);

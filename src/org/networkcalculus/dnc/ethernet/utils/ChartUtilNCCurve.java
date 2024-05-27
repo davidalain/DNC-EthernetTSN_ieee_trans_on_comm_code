@@ -40,7 +40,7 @@ import org.networkcalculus.dnc.curves.LinearSegment;
 
 /**
  * 
- * @author David Alain do Nascimento (dan@cin.ufpe.br)
+ * @author David Alain do Nascimento (david.nascimento@garanhuns.ifpe.edu.br, dan@cin.ufpe.br)
  *
  */
 public class ChartUtilNCCurve {
@@ -52,9 +52,9 @@ public class ChartUtilNCCurve {
 	}
 
 	// TODO: Can this plot curves with discontinuities like staircase functions?
-	public void plotCurve(Curve c, String name){
+	public void plotCurve(Curve curve, String title){
 
-		int seg_count = c.getSegmentCount();
+		int seg_count = curve.getSegmentCount();
 
 		double[] xData = new double[seg_count+1];
 		double[] yData = new double[seg_count+1];
@@ -64,14 +64,14 @@ public class ChartUtilNCCurve {
 		// - as long as the longest segment or
 		// - somewhere in the order of an affine curve's rate
 
-		LinearSegment seg = c.getSegment(0);
+		LinearSegment seg = curve.getSegment(0);
 		xData[0] = seg.getX().doubleValue();
 		yData[0] = seg.getY().doubleValue();
 
 		// The first segment starts in x=0, we do not know its length yet
 		double prev_x = 0, max_seg_length = 0;
-		for( int i = 1; i < c.getSegmentCount(); i++ ) {
-			seg = c.getSegment(i);
+		for( int i = 1; i < curve.getSegmentCount(); i++ ) {
+			seg = curve.getSegment(i);
 			xData[i] = seg.getX().doubleValue();
 			yData[i] = seg.getY().doubleValue();
 
@@ -90,16 +90,16 @@ public class ChartUtilNCCurve {
 		yData[seg_count] = seg.getY().doubleValue() + (max_seg_length * seg.getGrad().doubleValue()); 
 
 		// Create Chart
-		XYChart chart = QuickChart.getChart(name, "time (s)", "data (b)", "f(x)", xData, yData);
+		XYChart chart = QuickChart.getChart(title, "time (s)", "data (b)", "f(x)", xData, yData);
 
 		// Show it
 		new SwingWrapper<XYChart>(chart).displayChart();
 
 	}
 
-	public void saveCurve(Curve c, String name, String filepath) throws IOException {
+	public void saveCurveChart(Curve curve, String chartTitle, String filepath) throws IOException {
 
-		int seg_count = c.getSegmentCount();
+		int seg_count = curve.getSegmentCount();
 
 		double[] xData = new double[seg_count+1];
 		double[] yData = new double[seg_count+1];
@@ -109,14 +109,14 @@ public class ChartUtilNCCurve {
 		// - as long as the longest segment or
 		// - somewhere in the order of an affine curve's rate
 
-		LinearSegment seg = c.getSegment(0);
+		LinearSegment seg = curve.getSegment(0);
 		xData[0] = seg.getX().doubleValue();
 		yData[0] = seg.getY().doubleValue();
 
 		// The first segment starts in x=0, we do not know its length yet
 		double prev_x = 0, max_seg_length = 0;
-		for( int i = 1; i < c.getSegmentCount(); i++ ) {
-			seg = c.getSegment(i);
+		for( int i = 1; i < curve.getSegmentCount(); i++ ) {
+			seg = curve.getSegment(i);
 			xData[i] = seg.getX().doubleValue();
 			yData[i] = seg.getY().doubleValue();
 
@@ -135,15 +135,15 @@ public class ChartUtilNCCurve {
 		yData[seg_count] = seg.getY().doubleValue() + (max_seg_length * seg.getGrad().doubleValue()); 
 
 		// Create Chart
-		XYChart chart = QuickChart.getChart(name, "time (s)", "data (b)", "f(x)", xData, yData);
+		XYChart chart = QuickChart.getChart(chartTitle, "time (s)", "data (b)", "f(x)", xData, yData);
 
 		BitmapEncoder.saveJPGWithQuality(chart, filepath + ".jpg", 1.0f);
 
 	}
 
-	public void saveCurve(Curve c, String name, String curveName, String filepath) throws IOException {
+	public void saveCurveChart(Curve curve, String chartTitle, String curveName, String filepath) throws IOException {
 
-		int seg_count = c.getSegmentCount();
+		int seg_count = curve.getSegmentCount();
 
 		double[] xData = new double[seg_count+1];
 		double[] yData = new double[seg_count+1];
@@ -153,14 +153,14 @@ public class ChartUtilNCCurve {
 		// - as long as the longest segment or
 		// - somewhere in the order of an affine curve's rate
 
-		LinearSegment seg = c.getSegment(0);
+		LinearSegment seg = curve.getSegment(0);
 		xData[0] = seg.getX().doubleValue();
 		yData[0] = seg.getY().doubleValue();
 
 		// The first segment starts in x=0, we do not know its length yet
 		double prev_x = 0, max_seg_length = 0;
-		for( int i = 1; i < c.getSegmentCount(); i++ ) {
-			seg = c.getSegment(i);
+		for( int i = 1; i < curve.getSegmentCount(); i++ ) {
+			seg = curve.getSegment(i);
 			xData[i] = seg.getX().doubleValue();
 			yData[i] = seg.getY().doubleValue();
 
@@ -179,7 +179,7 @@ public class ChartUtilNCCurve {
 		yData[seg_count] = seg.getY().doubleValue() + (max_seg_length * seg.getGrad().doubleValue()); 
 
 		// Create Chart
-		XYChart chart = QuickChart.getChart(name, "time (s)", "data (b)", curveName, xData, yData);
+		XYChart chart = QuickChart.getChart(chartTitle, "time (s)", "data (b)", curveName, xData, yData);
 
 		BitmapEncoder.saveJPGWithQuality(chart, filepath + ".jpg", 1.0f);
 

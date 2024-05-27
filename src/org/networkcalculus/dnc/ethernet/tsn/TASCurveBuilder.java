@@ -135,7 +135,7 @@ public class TASCurveBuilder {
 				/*
 				 * d_i_PLCA term is used only for the PLCA modeling that does not use a server for PLCA.
 				 */
-				if(Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+				if(Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 					Objects.requireNonNull(window_j.d_i_PLCA, "window_j.d_i_PLCA cannot be null");
 
 				/**
@@ -145,11 +145,11 @@ public class TASCurveBuilder {
 				final double S_i_Pm = window_i.S_i_Pm;			//Maximum waiting time for the backlog period
 				final double o_ji_Pm = window_i.o_ji_Pm[j % size];
 
-				//final double d_i_PLCA = Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING) ? window_i.d_i_PLCA : 0.0;
+				//final double d_i_PLCA = Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING) ? window_i.d_i_PLCA : 0.0;
 
 				final double d_i_PLCA;
 				switch(plcaModeling) {
-				case NO_PLCA_SERVER_MODELING:			d_i_PLCA = window_i.d_i_PLCA;	break;
+				case SEPARATED_PLCA_SERVER_MODELING:			d_i_PLCA = window_i.d_i_PLCA;	break;
 				case SINGLE_PLCA_SERVER_MODELING:		d_i_PLCA = 0.0;					break;
 				default:
 					throw new IllegalArgumentException("Unexpected value: " + plcaModeling);
@@ -262,7 +262,7 @@ public class TASCurveBuilder {
 				Objects.requireNonNull(window_i.S_i_Pm, "window_i.S_i_Pm cannot be null");
 				Objects.requireNonNull(window_i.o_ji_Pm,"window_i.o_ji_Pm cannot be null");
 
-				if(Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING))
+				if(Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING))
 					Objects.requireNonNull(window_i.d_i_PLCA,"window_i.d_i_PLCA cannot be null");
 
 				for(int j = i ; j <= i + window_i.N_Pm - 1 ; j++) {
@@ -280,10 +280,10 @@ public class TASCurveBuilder {
 					final double S_i_Pm = window_i.S_i_Pm;			//Maximum waiting time for the backlog period
 					final double o_ji_Pm = window_i.o_ji_Pm[j % size];
 
-					//					final double d_i_PLCA = Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.NO_PLCA_SERVER_MODELING) ? window_i.d_i_PLCA : 0.0;
+					//					final double d_i_PLCA = Objects.equals(plcaModeling, ExecutionConfig.PLCAModeling.SEPARATED_PLCA_SERVER_MODELING) ? window_i.d_i_PLCA : 0.0;
 					final double d_i_PLCA;
 					switch(plcaModeling) {
-					case NO_PLCA_SERVER_MODELING:	d_i_PLCA = window_i.d_i_PLCA;	break;
+					case SEPARATED_PLCA_SERVER_MODELING:	d_i_PLCA = window_i.d_i_PLCA;	break;
 					default:						d_i_PLCA = 0.0;					break;
 					}
 

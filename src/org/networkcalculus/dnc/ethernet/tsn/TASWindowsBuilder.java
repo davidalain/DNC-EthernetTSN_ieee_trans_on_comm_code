@@ -1728,7 +1728,7 @@ public class TASWindowsBuilder {
 		 * One chart for each Ethernet interface
 		 */
 		switch(this.executionConfig.generateTASWindowsCharts) {
-		case GENERATE_INTERFACES_CHARTS_ONLY:
+		case GENERATE_INDIVIDUAL_INTERFACES_CHARTS_ONLY:
 		case ALL:
 			try {
 
@@ -1755,7 +1755,7 @@ public class TASWindowsBuilder {
 
 
 		switch(this.executionConfig.generateTASWindowsCharts) {
-		case GENERATE_WINDOW_COLLISIONS_CHARTS_ONLY:
+		case GENERATE_WINDOW_COLLISIONS_SAME_INTERFACE_CHARTS_ONLY:
 		case ALL:
 
 			/**

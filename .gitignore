@@ -1,4 +1,4 @@
 /bin/org/networkcalculus/dnc/ethernet/*.class
 *.class
-results
+/results/
 /target/
